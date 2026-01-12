@@ -10,13 +10,15 @@ if [ ! -d "$output_path" ]; then
     ## Create the directory
     mkdir -p "$output_path"
 fi
-num_hours=23
+num_hours=71
 num_threads=40
 ram_gb=64
 for uox_or_mox in uox mox; do
     for rse_or_sub in rse sub; do
         for case_no in 1 2 3 4; do
-            inp_x2m_file_name="NEW_TEST_3x3_SAAF_${uox_or_mox}_fis_iga_${rse_or_sub}_${case_no}.x2m"
+            ## For files ss_lib_bkup_gen_3x3_SAAF_mox_fis_iga_proc
+            # inp_x2m_file_name="NEW_TEST_3x3_SAAF_${uox_or_mox}_fis_iga_${rse_or_sub}_${case_no}.x2m"
+            inp_x2m_file_name="ss_lib_bkup_gen_3x3_SAAF_${uox_or_mox}_fis_iga_${rse_or_sub}_${case_no}.x2m"
             filename="${uox_or_mox}_${rse_or_sub}_case_${case_no}.pbs"
             echo "Making input file: $(basename $filename)"
             file_path=${output_path}/$filename
